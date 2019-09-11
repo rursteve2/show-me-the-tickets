@@ -9,9 +9,7 @@ export default class OneEvent extends Component {
         const { event, index } = this.props
         return (
             <div>
-                <Link to={`/${index}`}><h2>{event.LinkTitleText}</h2></Link>
-                <p>{index}</p>
-                
+                <Link to={`/${event.EventId}`}><h2>{event.LinkTitleText}</h2></Link>
             </div>
         )
     }

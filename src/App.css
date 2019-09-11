@@ -4,7 +4,7 @@
 
 
 
-html, .App, body {
+html, body, .App {
   background-color: #95B8D1;
 }
 
@@ -12,17 +12,3 @@ html, .App, body {
   display: inline-block;
 }
 
-/* .oneevent {
-  border: 1px solid #666A86;
-  display: flex;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  padding: 15px 0 15px 0;
-
-  justify-content: space-evenly;
-}
-
-.startinfo {
-  
-  align-self: auto;
-} */

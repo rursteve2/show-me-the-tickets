@@ -2,23 +2,22 @@ import React from 'react'
 
 
 export default function OneEventInfo(props) {
-    console.log(props)
     const { oneEvent } = props
     return (
-        <div>
-            <h1>Event: {oneEvent.LinkTitleText}</h1>
-            <h4>Price: {oneEvent.MinPrice}</h4>
+        <div role="list" className="ui list">
+            <h1 role="listitem" className="item">Event: {oneEvent.LinkTitleText}</h1>
+            <h4 role="listitem" className="item">Price: {oneEvent.MinPrice}</h4>
             <h5>{oneEvent.IsSoldOut ? "SOLD OUT" : null}</h5>
             <h5>{oneEvent.IsSellingFast ? "Selling Quickly!" : null}</h5>
-            <h4>Time: {oneEvent.Day}, {oneEvent.Date} at {oneEvent.Time}</h4>
-            <h6>{oneEvent.HeadingTowardsLimitedStockMessage}</h6>
+            <h4 role="listitem" className="item">Time: {oneEvent.Day}, {oneEvent.Date} at {oneEvent.Time}</h4>
+            <h6 role="listitem" className="item">{oneEvent.HeadingTowardsLimitedStockMessage}</h6>
             <div>
-                <p>Available Tickets: {oneEvent.AvailableTicketsNumber}</p>
-                <p>Country: {oneEvent.VenueCountry}</p>
-                <p>City: {oneEvent.VenueCity}</p>
-                <p>{oneEvent.VenueName}</p>
-                <p>Capacity: {oneEvent.VenueCapacity}</p>
-                <h5>{oneEvent.VenueDescription}</h5>
+                <p role="listitem" className="item">Available Tickets: {oneEvent.AvailableTicketsNumber}</p>
+                <p role="listitem" className="item">Country: {oneEvent.VenueCountry}</p>
+                <p role="listitem" className="item">City: {oneEvent.VenueCity}</p>
+                <p role="listitem" className="item">{oneEvent.VenueName}</p>
+                <p role="listitem" className="item">Capacity: {oneEvent.VenueCapacity}</p>
+                <h5 role="listitem" className="item">{oneEvent.VenueDescription}</h5>
             </div>
             
         </div>

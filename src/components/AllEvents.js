@@ -13,9 +13,7 @@ export default class AllEvents extends Component {
 
 
     onChange = (e) => {
-        console.log(e.target.value)
         let newCity = this.props.data.Items.filter((el) => (el.VenueCity == e.target.value))
-        console.log(newCity)
         this.setState({
             data: newCity
         })
@@ -23,15 +21,24 @@ export default class AllEvents extends Component {
 
 
     render() {
-    console.log(this.props)
     const { props } = this
         return (
             <div>
-                <p>All Events</p>
-                <select onChange={props.onChange} placeholder="Select City">
-                    <option value="" disabled selected>Select City</option>
-                {props.locations.map((city, key) => <option key={key} value={city}>{city}</option>)}
-                </select>
+                <div>
+                    <select onChange={props.onChange}>
+                        <option value="" disabled selected>Select City</option>
+                    {props.locations.map((city, key) => <option key={key} value={city}>{city}</option>)}
+                    </select>
+                </div>
+                <div>
+                    <p className="sort">Sort by:</p>
+                    <select onChange={props.filterData} className="sort">
+                        <option disabled selected>Select Option</option>
+                        <option value="price">Price(Low to High)</option>
+                        <option value="time">Date(Earliest first)</option>
+                        <option value="ticketsleft">Tickets Left(Low to High)</option>
+                    </select>
+                </div>
                 {props.data && props.data.map((event, index) => (
                 <OneEvent
                 event={event}
